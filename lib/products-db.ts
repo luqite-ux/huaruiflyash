@@ -1,0 +1,12 @@
+import { getSupabaseClient, getTenantId } from "@/lib/supabase"
+import { products as fallbackProducts, type Product } from "@/lib/data/products"
+
+type Row = { slug:string|null; name_i18n:Record<string,string>|null; description_i18n:Record<string,string>|null; category:string|null; features:unknown; applications:unknown; image_url:string|null; extra_data:Record<string,unknown>|null }
+const text=(v:Record<string,string>|null,fallback:string)=>v?.en||v?.zh||fallback
+export async function fetchProductsData():Promise<Product[]> {
+  const db=getSupabaseClient(), tenant=getTenantId(); if(!db||!tenant)return fallbackProducts
+  const {data,error}=await db.from('products').select('slug,name_i18n,description_i18n,category,features,applications,image_url,extra_data').eq('tenant_id',tenant).eq('is_active',true).order('sort_order')
+  if(error||!data?.length)return fallbackProducts
+  return (data as Row[]).map((r)=>({slug:r.slug||'fly-ash',category:{en:r.category||'Fly Ash'},grades:Array.isArray(r.extra_data?.grades)?(r.extra_data.grades as string[]).map(en=>({en})):fallbackProducts[0].grades,name:{en:text(r.name_i18n,'Fly Ash')},summary:{en:text(r.description_i18n,fallbackProducts[0].summary.en)},description:{en:text(r.description_i18n,fallbackProducts[0].description.en)},applicationSlugs:fallbackProducts[0].applicationSlugs,image:{src:r.image_url||fallbackProducts[0].image.src,alt:fallbackProducts[0].image.alt}}))
+}
+export async function fetchProductBySlug(slug:string){return (await fetchProductsData()).find(p=>p.slug===slug)||null}
