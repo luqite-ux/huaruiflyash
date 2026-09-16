@@ -4,6 +4,7 @@ import { notFound } from "next/navigation"
 import { ChevronRight } from "lucide-react"
 import { ViewportReveal } from "@/components/motion/viewport-reveal"
 import { getArticleBySlug } from "@/lib/articles-db"
+import { siteConfig } from "@/lib/site-config"
 
 export const revalidate = 60
 export const dynamicParams = true
@@ -19,6 +20,8 @@ export async function generateMetadata({
   return {
     title: article.title,
     description: article.excerpt,
+    alternates: { canonical: `/news/${article.slug}` },
+    openGraph: { title: article.title, description: article.excerpt, type: "article", url: `/news/${article.slug}`, publishedTime: article.publishedAt, images: article.featuredImage ? [article.featuredImage] : undefined },
   }
 }
 
@@ -33,6 +36,7 @@ export default async function NewsArticlePage({
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({'@context':'https://schema.org','@type':'Article','@id':`${siteConfig.url}/news/${article.slug}#article`,headline:article.title,description:article.excerpt,datePublished:article.publishedAt,dateModified:article.publishedAt,image:article.featuredImage?[article.featuredImage]:undefined,author:{'@id':`${siteConfig.url}/#organization`},publisher:{'@id':`${siteConfig.url}/#organization`},mainEntityOfPage:`${siteConfig.url}/news/${article.slug}`}) }} />
       <nav aria-label="Breadcrumb" className="border-b border-border bg-secondary/30">
         <div className="mx-auto max-w-3xl px-4 py-4 text-sm text-muted-foreground sm:px-6 lg:px-8">
           <ol className="flex items-center gap-1.5">

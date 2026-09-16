@@ -1,9 +1,11 @@
 import type { MetadataRoute } from "next"
 import { siteConfig } from "@/lib/site-config"
-import { products } from "@/lib/data/products"
-import { newsArticles } from "@/lib/data/news"
+import { fetchProductsData } from "@/lib/products-db"
+import { getPublishedArticles } from "@/lib/articles-db"
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export const revalidate = 60
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const [products, newsArticles] = await Promise.all([fetchProductsData(), getPublishedArticles()])
   const staticRoutes = [
     "",
     "/products",
@@ -27,7 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const newsRoutes = newsArticles.map((article) => ({
     url: `${siteConfig.url}/news/${article.slug}`,
-    lastModified: article.publishedAt,
+    lastModified: article.publishedAt || new Date(),
   }))
 
   return [...staticRoutes, ...productRoutes, ...newsRoutes]

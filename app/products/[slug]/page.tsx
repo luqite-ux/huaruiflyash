@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { fetchProductBySlug } from "@/lib/products-db"
 import { getApplicationBySlug } from "@/lib/data/applications"
 import { resolveLocaleText } from "@/lib/i18n"
+import { siteConfig } from "@/lib/site-config"
 
 export const revalidate = 60
 export const dynamicParams = true
@@ -24,6 +25,8 @@ export async function generateMetadata({
   return {
     title: resolveLocaleText(product.name),
     description: resolveLocaleText(product.summary),
+    alternates: { canonical: `/products/${product.slug}` },
+    openGraph: { title: resolveLocaleText(product.name), description: resolveLocaleText(product.summary), type: "website", url: `/products/${product.slug}`, images: [product.image.src] },
   }
 }
 
@@ -42,6 +45,7 @@ export default async function ProductDetailPage({
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({'@context':'https://schema.org','@type':'Product','@id':`${siteConfig.url}/products/${product.slug}#product`,name:resolveLocaleText(product.name),description:resolveLocaleText(product.description),image:[product.image.src.startsWith('http')?product.image.src:`${siteConfig.url}${product.image.src}`],brand:{'@type':'Brand',name:siteConfig.shortName},manufacturer:{'@id':`${siteConfig.url}/#organization`},url:`${siteConfig.url}/products/${product.slug}`}) }} />
       <nav aria-label="Breadcrumb" className="border-b border-border bg-secondary/30">
         <div className="mx-auto max-w-7xl px-4 py-4 text-sm text-muted-foreground sm:px-6 lg:px-8">
           <ol className="flex items-center gap-1.5">
