@@ -5,6 +5,7 @@ import { CtaSection } from "@/components/cta-section"
 
 export const metadata: Metadata = {
   title: "Quality",
+  alternates: { canonical: "/quality" },
   description: "How Huarui approaches quality and communication for fly ash orders.",
 }
 

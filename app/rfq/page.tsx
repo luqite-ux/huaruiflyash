@@ -5,6 +5,7 @@ import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
   title: "Request a Quote",
+  alternates: { canonical: "/rfq" },
   description: `Submit a fly ash purchasing inquiry to ${siteConfig.legalName}.`,
 }
 

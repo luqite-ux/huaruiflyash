@@ -7,6 +7,7 @@ import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
   title: "Manufacturing & Capabilities",
+  alternates: { canonical: "/manufacturing" },
   description:
     "How Nantong Huarui Building Materials Co., Ltd. processes power-plant fly ash and slag for resource reuse.",
 }

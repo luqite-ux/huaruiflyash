@@ -8,6 +8,7 @@ export const revalidate = 60
 
 export const metadata: Metadata = {
   title: "News",
+  alternates: { canonical: "/news" },
   description: "Updates from Nantong Huarui Building Materials Co., Ltd.",
 }
 

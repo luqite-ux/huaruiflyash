@@ -7,6 +7,7 @@ import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
   title: "Contact",
+  alternates: { canonical: "/contact" },
   description: `Contact ${siteConfig.legalName} in Nantong, Jiangsu, China.`,
 }
 

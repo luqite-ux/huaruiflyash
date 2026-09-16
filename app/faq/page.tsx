@@ -6,6 +6,7 @@ import { faqItems } from "@/lib/data/faq"
 
 export const metadata: Metadata = {
   title: "FAQ",
+  alternates: { canonical: "/faq" },
   description: "Frequently asked questions about Huarui fly ash products and inquiries.",
 }
 

@@ -7,6 +7,7 @@ import { applications } from "@/lib/data/applications"
 
 export const metadata: Metadata = {
   title: "Applications",
+  alternates: { canonical: "/applications" },
   description:
     "How Huarui fly ash is used: concrete mineral admixture, cement production, fly-ash building products and infrastructure backfill.",
 }

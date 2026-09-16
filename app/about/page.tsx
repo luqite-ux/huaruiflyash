@@ -6,6 +6,7 @@ import { siteConfig } from "@/lib/site-config"
 
 export const metadata: Metadata = {
   title: "About",
+  alternates: { canonical: "/about" },
   description: `About ${siteConfig.legalName}, founded in ${siteConfig.founded} in Nantong, Jiangsu, China.`,
 }
 
