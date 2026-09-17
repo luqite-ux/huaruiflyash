@@ -35,6 +35,29 @@ const steps = [
   },
 ]
 
+const facilityGallery = [
+  {
+    src: "/assets/production-classification-equipment.jpg",
+    alt: "Fly ash processing and classification equipment inside the Huarui facility",
+    label: "Processing & classification",
+  },
+  {
+    src: "/assets/production-control-room.jpg",
+    alt: "Operator monitoring production equipment in the Huarui control room",
+    label: "Production monitoring",
+  },
+  {
+    src: "/assets/quality-testing-laboratory.jpg",
+    alt: "Quality testing work in the Huarui laboratory",
+    label: "Quality testing",
+  },
+  {
+    src: "/assets/laboratory-equipment.jpg",
+    alt: "Laboratory testing equipment used by Huarui",
+    label: "Laboratory equipment",
+  },
+]
+
 export default function ManufacturingPage() {
   return (
     <>
@@ -85,6 +108,28 @@ export default function ManufacturingPage() {
               and production details for an order are confirmed directly with our team upon inquiry.
             </p>
           </ViewportReveal>
+        </div>
+      </section>
+
+      <section className="border-y border-border bg-secondary/30">
+        <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <ViewportReveal className="max-w-2xl">
+            <span className="text-sm font-semibold uppercase tracking-wide text-primary">Inside the facility</span>
+            <h2 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">Customer-Supplied Production Photos</h2>
+            <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+              Processing, production monitoring and laboratory testing at the Nantong facility.
+            </p>
+          </ViewportReveal>
+          <div className="mt-8 grid gap-5 sm:grid-cols-2">
+            {facilityGallery.map((item, index) => (
+              <ViewportReveal key={item.src} index={index} className="overflow-hidden rounded-md border border-border bg-background">
+                <div className="relative aspect-[4/3] bg-secondary/40">
+                  <Image src={item.src} alt={item.alt} fill sizes="(min-width: 640px) 50vw, 100vw" className="object-cover" />
+                </div>
+                <p className="px-4 py-3 text-sm font-medium text-foreground">{item.label}</p>
+              </ViewportReveal>
+            ))}
+          </div>
         </div>
       </section>
 

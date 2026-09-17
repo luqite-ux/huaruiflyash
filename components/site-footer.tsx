@@ -10,7 +10,7 @@ export function SiteFooter() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <Link href="/" className="control-affordance inline-block rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-              <HuaruiLogo />
+              <HuaruiLogo className="origin-left scale-110 sm:scale-125" />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
               {siteConfig.legalName}, founded in {siteConfig.founded} in Nantong, Jiangsu. {siteConfig.focus}

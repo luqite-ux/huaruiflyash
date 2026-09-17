@@ -10,9 +10,9 @@ export function HuaruiLogo({ className, showWordmark = true }: { className?: str
       <Image
         src={showWordmark ? "/assets/huarui-logo.png" : "/assets/huarui-mark.png"}
         alt={showWordmark ? "Huarui Construction Material" : ""}
-        width={showWordmark ? 190 : 40}
-        height={showWordmark ? 58 : 40}
-        className={showWordmark ? "h-10 w-auto object-contain sm:h-11" : "h-8 w-8 object-contain"}
+        width={showWordmark ? 824 : 40}
+        height={showWordmark ? 256 : 40}
+        className={showWordmark ? "h-14 w-auto object-contain sm:h-16" : "h-8 w-8 object-contain"}
         priority
       />
     </span>
