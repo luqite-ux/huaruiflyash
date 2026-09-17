@@ -37,9 +37,13 @@ export function SiteFooter() {
             <h2 className="text-sm font-semibold text-foreground">Products</h2>
             <ul className="mt-4 space-y-2">
               <li>
-                <Link href="/products/fly-ash" className="control-affordance text-sm text-muted-foreground hover:text-primary rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-                  Fly Ash — Grade I, II &amp; III
-                </Link>
+                <Link href="/products/grade-i-fly-ash" className="control-affordance text-sm text-muted-foreground hover:text-primary rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Grade I Fly Ash</Link>
+              </li>
+              <li>
+                <Link href="/products/grade-ii-fly-ash" className="control-affordance text-sm text-muted-foreground hover:text-primary rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Grade II Fly Ash</Link>
+              </li>
+              <li>
+                <Link href="/products/grade-iii-fly-ash" className="control-affordance text-sm text-muted-foreground hover:text-primary rounded-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">Grade III Fly Ash</Link>
               </li>
             </ul>
           </div>

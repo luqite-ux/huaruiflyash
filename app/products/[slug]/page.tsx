@@ -87,7 +87,7 @@ export default async function ProductDetailPage({
             </p>
 
             <div className="mt-6">
-              <h2 className="text-sm font-semibold text-foreground">Available grades</h2>
+              <h2 className="text-sm font-semibold text-foreground">Product grade</h2>
               <ul className="mt-3 flex flex-wrap gap-2">
                 {product.grades.map((grade) => (
                   <li key={resolveLocaleText(grade)} className="rounded-full border border-border px-3 py-1.5 text-sm text-foreground">

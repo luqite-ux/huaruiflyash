@@ -11,21 +11,49 @@ export interface Product {
   image: { src: string; alt: LocalizedText }
 }
 
-// Fly Ash in Grade I, Grade II and Grade III are specifications within one
-// real product family supplied by Huarui — not separate invented product lines.
 export const products: Product[] = [
   {
-    slug: "fly-ash",
+    slug: "grade-i-fly-ash",
     category: { en: "Fly Ash" },
-    grades: [{ en: "Grade I" }, { en: "Grade II" }, { en: "Grade III" }],
-    name: { en: "Fly Ash" },
+    grades: [{ en: "Grade I" }],
+    name: { en: "Grade I Fly Ash" },
     summary: {
-      en: "Processed power-plant fly ash supplied in Grade I, Grade II and Grade III for construction-material applications.",
+      en: "Grade I fly ash for order-specific concrete and construction-material requirements.",
     },
     description: {
-      en: "Huarui processes power-plant fly ash for resource reuse and supplies it as one product family in Grade I, Grade II and Grade III. Typical uses include concrete mineral admixture, cement production, fly-ash building products and infrastructure backfill. The applicable grade and order-specific requirements are confirmed directly for each inquiry.",
+      en: "Grade I Fly Ash is one of the three fly ash grades supplied by Huarui. Typical uses may include concrete mineral admixture and other construction-material applications. Applicable technical requirements are confirmed directly for each order.",
     },
     applicationSlugs: ["concrete-admixture", "cement-production", "building-products", "infrastructure-backfill"],
+    image: {
+      src: "/assets/product-fly-ash.jpg",
+      alt: { en: "Fly ash product packaged in bulk bags ready for shipment" },
+    },
+  },
+  {
+    slug: "grade-ii-fly-ash",
+    category: { en: "Fly Ash" },
+    grades: [{ en: "Grade II" }],
+    name: { en: "Grade II Fly Ash" },
+    summary: { en: "Grade II fly ash for concrete, cement and building-product applications." },
+    description: {
+      en: "Grade II Fly Ash is one of the three fly ash grades supplied by Huarui. Typical uses may include concrete, cement production and fly-ash building products. Applicable technical requirements are confirmed directly for each order.",
+    },
+    applicationSlugs: ["concrete-admixture", "cement-production", "building-products", "infrastructure-backfill"],
+    image: {
+      src: "/assets/product-fly-ash.jpg",
+      alt: { en: "Fly ash product packaged in bulk bags ready for shipment" },
+    },
+  },
+  {
+    slug: "grade-iii-fly-ash",
+    category: { en: "Fly Ash" },
+    grades: [{ en: "Grade III" }],
+    name: { en: "Grade III Fly Ash" },
+    summary: { en: "Grade III fly ash for suitable building-product and infrastructure applications." },
+    description: {
+      en: "Grade III Fly Ash is one of the three fly ash grades supplied by Huarui. Typical uses may include suitable building products and infrastructure backfill. Applicable technical requirements are confirmed directly for each order.",
+    },
+    applicationSlugs: ["building-products", "infrastructure-backfill"],
     image: {
       src: "/assets/product-fly-ash.jpg",
       alt: { en: "Fly ash product packaged in bulk bags ready for shipment" },

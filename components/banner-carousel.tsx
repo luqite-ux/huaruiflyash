@@ -84,7 +84,7 @@ export function BannerCarousel() {
       onBlur={() => setPaused(false)}
     >
       <div
-        className="relative aspect-[16/9] w-full sm:aspect-[16/7] lg:aspect-[1920/800]"
+        className="relative h-[430px] w-full sm:h-auto sm:aspect-[16/7] lg:aspect-[1920/800]"
         onTouchStart={(e) => {
           touchStartX.current = e.touches[0].clientX
         }}
@@ -115,7 +115,7 @@ export function BannerCarousel() {
                 sizes="100vw"
                 className="object-cover object-[center_38%] sm:object-center"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-black/10 sm:bg-gradient-to-r sm:from-black/70 sm:via-black/30 sm:to-transparent" />
+              <div className="banner-copy-overlay pointer-events-none absolute inset-0" />
 
               {/* MOT-HR-01: confined particulate drift accent, background only. */}
               <div
@@ -144,12 +144,10 @@ export function BannerCarousel() {
               </div>
 
               {/* MOT-HR-01: veil sweep on transition, decorative only. */}
-              <div className={cn("banner-veil pointer-events-none absolute inset-0", isActive && "is-active")}>
-                <div className="h-full w-1/3 bg-white/20" />
-              </div>
+              <div className={cn("banner-veil pointer-events-none absolute inset-0", isActive && "is-active")} />
 
-              <div className="relative z-20 flex h-full items-end sm:items-center">
-                <div className="mx-auto w-full max-w-7xl px-4 pb-8 sm:px-6 sm:pb-0 lg:px-8">
+              <div className="relative z-20 flex h-full items-center">
+                <div className="mx-auto w-full max-w-7xl px-4 pb-16 sm:px-6 sm:pb-0 lg:px-8">
                   <div className="max-w-md sm:max-w-lg">
                     <h1 className="text-balance text-2xl font-bold text-white sm:text-3xl lg:text-4xl">
                       {slide.headline}

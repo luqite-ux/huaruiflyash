@@ -194,19 +194,42 @@
 }
 
 /* MOT-HR-01: veil reveal sweep between banner slides. */
+/* Continuous copy protection without a visible rectangular seam. */
+.banner-copy-overlay {
+  background:
+    linear-gradient(90deg, rgb(9 25 32 / 0.78) 0%, rgb(9 25 32 / 0.58) 34%, rgb(9 25 32 / 0.22) 66%, transparent 100%),
+    linear-gradient(0deg, rgb(9 25 32 / 0.2), transparent 45%);
+}
+
 @keyframes veil-sweep {
   0% {
-    transform: translateX(-100%);
-    opacity: 0.9;
+    transform: translateX(-115%);
+    opacity: 0;
+  }
+  18% {
+    opacity: 0.32;
   }
   100% {
-    transform: translateX(100%);
+    transform: translateX(115%);
     opacity: 0;
   }
 }
 
+.banner-veil {
+  width: 42%;
+  opacity: 0;
+  background: linear-gradient(90deg, transparent, rgb(255 255 255 / 0.18), transparent);
+  transform: translateX(-115%);
+}
+
 .js .banner-veil.is-active {
-  animation: veil-sweep 720ms ease-out;
+  animation: veil-sweep 720ms ease-out both;
+}
+
+@media (max-width: 639px) {
+  .banner-copy-overlay {
+    background: linear-gradient(0deg, rgb(9 25 32 / 0.82) 0%, rgb(9 25 32 / 0.46) 48%, rgb(9 25 32 / 0.1) 100%);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

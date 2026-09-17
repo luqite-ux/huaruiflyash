@@ -20,10 +20,10 @@ export default async function ProductsPage() {
         <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
           <ViewportReveal className="max-w-2xl">
             <span className="text-sm font-semibold uppercase tracking-wide text-primary">Products</span>
-            <h1 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">Fly Ash Product Family</h1>
+            <h1 className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">Fly Ash by Grade</h1>
             <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-              Fly Ash is supplied in Grade I, Grade II and Grade III — three specifications within one product
-              family, produced through the processing and resource utilization of power-plant fly ash.
+              Compare Grade I, Grade II and Grade III Fly Ash as three purchasing options within the same product
+              family. Confirm the applicable grade and order-specific requirements with our team.
             </p>
           </ViewportReveal>
         </div>

@@ -65,7 +65,7 @@ export default async function HomePage() {
             <ViewportReveal>
               <span className="text-sm font-semibold uppercase tracking-wide text-primary">Products</span>
               <h2 id="products-heading" className="mt-2 text-3xl font-bold text-foreground sm:text-4xl">
-                Fly Ash, Grade I to Grade III
+                Three Fly Ash Grades
               </h2>
             </ViewportReveal>
             <ViewportReveal>
