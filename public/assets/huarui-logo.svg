@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 10 820 280" role="img" aria-labelledby="title desc">
+  <title id="title">HUARUI construction material</title>
+  <desc id="desc">Huarui blue geometric mark and wordmark</desc>
+  <g fill="#0753a6">
+    <path d="M34 102 142 34v90l-42 26v104L34 296Z"/>
+    <path d="M172 86 280 18v198l-108 68V190l42-26v-54Z"/>
+    <circle cx="156" cy="171" r="46"/>
+    <path d="M156 112a59 59 0 1 0 0 118 59 59 0 0 0 0-118Zm0 15a44 44 0 1 1 0 88 44 44 0 0 1 0-88Z" fill="#fff"/>
+    <text x="316" y="181" font-family="Arial Black, Arial, Helvetica, sans-serif" font-size="116" font-weight="900" letter-spacing="-5">HUARUI</text>
+    <text x="320" y="254" font-family="Arial, Helvetica, sans-serif" font-size="47" font-weight="700" letter-spacing="-.8">construction material</text>
+  </g>
+</svg>

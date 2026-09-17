@@ -25,8 +25,8 @@ export const products: Product[] = [
     },
     applicationSlugs: ["concrete-admixture", "cement-production", "building-products", "infrastructure-backfill"],
     image: {
-      src: "/assets/product-fly-ash.jpg",
-      alt: { en: "Fly ash product packaged in bulk bags ready for shipment" },
+      src: "/assets/grade-i-fly-ash.png",
+      alt: { en: "Grade I fly ash supplied in white industrial bulk bags" },
     },
   },
   {
@@ -40,8 +40,8 @@ export const products: Product[] = [
     },
     applicationSlugs: ["concrete-admixture", "cement-production", "building-products", "infrastructure-backfill"],
     image: {
-      src: "/assets/product-fly-ash.jpg",
-      alt: { en: "Fly ash product packaged in bulk bags ready for shipment" },
+      src: "/assets/grade-ii-fly-ash.png",
+      alt: { en: "Grade II fly ash sample with industrial bulk bags" },
     },
   },
   {
@@ -55,8 +55,8 @@ export const products: Product[] = [
     },
     applicationSlugs: ["building-products", "infrastructure-backfill"],
     image: {
-      src: "/assets/product-fly-ash.jpg",
-      alt: { en: "Fly ash product packaged in bulk bags ready for shipment" },
+      src: "/assets/grade-iii-fly-ash.png",
+      alt: { en: "Grade III fly ash prepared beside industrial bulk bags" },
     },
   },
 ]

@@ -8,11 +8,11 @@ export function HuaruiLogo({ className, showWordmark = true }: { className?: str
   return (
     <span className={cn("inline-flex items-center", className)}>
       <Image
-        src={showWordmark ? "/assets/huarui-logo.png" : "/assets/huarui-mark.png"}
+        src={showWordmark ? "/assets/huarui-logo.svg" : "/assets/huarui-mark.png"}
         alt={showWordmark ? "Huarui Construction Material" : ""}
-        width={showWordmark ? 824 : 40}
-        height={showWordmark ? 256 : 40}
-        className={showWordmark ? "h-14 w-auto object-contain sm:h-16" : "h-8 w-8 object-contain"}
+        width={showWordmark ? 940 : 40}
+        height={showWordmark ? 300 : 40}
+        className={showWordmark ? "h-16 w-auto object-contain sm:h-20" : "h-8 w-8 object-contain"}
         priority
       />
     </span>
